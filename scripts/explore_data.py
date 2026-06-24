@@ -8,7 +8,7 @@ columns = [
 ]
 
 # Load data
-df = pd.read_csv('data/processed.cleveland.data',
+df = pd.read_csv('data/processed.cleveland.data', 
                  names=columns, na_values='?')
 
 print("Shape:", df.shape)
