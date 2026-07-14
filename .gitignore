@@ -14,5 +14,7 @@ data/
 
 # Models / experiment artifacts
 mlruns/
+mlflow.db
+mlartifacts/
 *.pkl
 *.joblib
