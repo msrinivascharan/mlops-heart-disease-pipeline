@@ -18,3 +18,9 @@ mlflow.db
 mlartifacts/
 *.pkl
 *.joblib
+
+mlruns/
+mlartifacts/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

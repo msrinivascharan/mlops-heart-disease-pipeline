@@ -1,6 +1,5 @@
 pandas
 scikit-learn
-mlflow
 fastapi
 uvicorn
-jupyter
+pydantic

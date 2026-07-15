@@ -11,14 +11,19 @@ app = FastAPI(title="Heart Disease Prediction API",
 
 # The registry lives in the SQLite store train.py wrote to — point MLflow at it,
 # otherwise it looks in the empty default ./mlruns store.
-mlflow.set_tracking_uri("sqlite:///mlflow.db")
+#mlflow.set_tracking_uri("sqlite:///mlflow.db")
 
 # Load model at startup.
 # MLflow 3.x removed stages ("Production"), so reference the version carrying
 # the "champion" alias instead.
-MODEL_URI = "models:/HeartDiseaseModel@champion"
-model = mlflow.sklearn.load_model(MODEL_URI)
-print("Model loaded and ready.")
+#MODEL_URI = "models:/HeartDiseaseModel@champion"
+#model = mlflow.sklearn.load_model(MODEL_URI)
+#print("Model loaded and ready.")
+
+import pickle
+with open('models/heart_model.pkl', 'rb') as f:
+    model = pickle.load(f)
+print("Model loaded from pkl file.")
 
 
 class PatientData(BaseModel):
