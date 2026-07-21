@@ -1,3 +1,6 @@
+import os
+import pickle
+
 import pandas as pd
 import mlflow
 import mlflow.sklearn
@@ -48,8 +51,15 @@ with mlflow.start_run():
     mlflow.log_metric("accuracy", accuracy)
     mlflow.log_metric("f1_score", f1)
 
-    # Log model
+    # Log model to the MLflow registry
     mlflow.sklearn.log_model(model, "model")
+
+    # Also save a plain pickle for the Docker image (Task 7): the container has
+    # no mlflow.db, so serve.py loads this file instead of the registry.
+    os.makedirs('models', exist_ok=True)
+    with open('models/heart_model.pkl', 'wb') as f:
+        pickle.dump(model, f)
+    print("Model also saved to models/heart_model.pkl")
 
     print(f"Run complete. Accuracy: {accuracy:.4f} | F1: {f1:.4f}")
     print(f"Run ID: {mlflow.active_run().info.run_id}")
