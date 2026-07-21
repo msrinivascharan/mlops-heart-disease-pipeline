@@ -9,6 +9,8 @@
 An **end-to-end MLOps pipeline** built on a clinical dataset — the full journey from raw data to a **served, containerised** machine-learning model. Built locally on an 8 GB Windows laptop; Docker step run in GitHub Codespaces.
 
 > This README doubles as my personal **interview / demo reference**: each pipeline stage lists its *key topics* and the *mandatory learning* to internalise before moving on. See [The MLOps Journey](#the-mlops-journey--key-topics--mandatory-learnings).
+>
+> 🛠️ **Want to build this yourself, step by step?** Follow the [**Hands-On Build Walkthrough**](HANDS-ON-STEPS.md) — every command, the concepts per stage, and the exact fixes for the modern stack (MLflow 3.x, Pydantic v2, Docker via Codespaces).
 
 ---
 
