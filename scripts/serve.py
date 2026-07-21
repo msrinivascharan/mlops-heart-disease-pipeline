@@ -1,7 +1,5 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-import mlflow
-import mlflow.sklearn
 import pandas as pd
 import uvicorn
 
