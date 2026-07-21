@@ -18,6 +18,9 @@ mlflow.db
 mlartifacts/
 *.pkl
 *.joblib
+# Exception: DO track the served model so the repo is self-contained
+# (the Dockerfile's `COPY models/` needs it, even on a fresh clone).
+!models/*.pkl
 
 mlruns/
 mlartifacts/
